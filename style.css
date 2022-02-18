@@ -1,0 +1,23 @@
+header:first-of-type,
+h2 {
+  background-color: pink;
+}
+
+main {
+  background-color: lavender;
+}
+
+dt {
+  font-size: 14pt;
+}
+dl {
+  display: flex;
+  flex-direction: column;
+}
+
+dl dd:nth-child(3n) {
+  align-self: flex-end;
+}
+dl dd:nth-child(3n)::before {
+  content: "\20AC";
+}
