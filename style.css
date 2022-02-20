@@ -1,10 +1,22 @@
-header:first-of-type,
-h2 {
-  background-color: pink;
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #ad97a4ff;
 }
 
 main {
-  background-color: lavender;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+section {
+  width: 30%;
+  margin: 1em;
 }
 
 dt {
@@ -20,4 +32,27 @@ dl dd:nth-child(3n) {
 }
 dl dd:nth-child(3n)::before {
   content: "\20AC";
+}
+
+h1 {
+  font-family: "Mrs Sheppards", cursive;
+  color: #724a6cff;
+  font-size: 60pt;
+}
+
+header:first-of-type,
+h2 {
+  /* background-color: pink; */
+  text-align: center;
+  padding: 0.5em;
+  color: #724a6cff;
+}
+
+h2::first-letter,
+dt::first-letter {
+  text-transform: capitalize;
+}
+
+p {
+  color: black;
 }
