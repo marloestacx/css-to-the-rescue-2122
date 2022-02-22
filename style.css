@@ -4,32 +4,40 @@
 }
 
 body {
-  background-color: #ad97a4ff;
+  background-color: #b7a4af;
+  font-family: "Quicksand", sans-serif;
 }
 
 main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 33% [col-start]);
+  justify-content: center;
 }
 
 section {
-  width: 30%;
   margin: 1em;
 }
 
 dt {
   font-size: 14pt;
 }
+
 dl {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: [first] 75% [line2] 25% [end];
+}
+
+dd {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  padding-bottom: 0.5em;
 }
 
 dl dd:nth-child(3n) {
-  align-self: flex-end;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
+
 dl dd:nth-child(3n)::before {
   content: "\20AC";
 }
@@ -51,6 +59,10 @@ h2 {
 h2::first-letter,
 dt::first-letter {
   text-transform: capitalize;
+}
+
+h2 {
+  font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
 p {
