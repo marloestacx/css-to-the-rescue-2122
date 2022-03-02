@@ -10,12 +10,45 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: repeat(3, 33% [col-start]);
   justify-content: center;
+}
+
+@media (min-width: 900px) {
+  main {
+    grid-template-columns: repeat(3, 33% [col-start]);
+  }
+}
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: repeat(2, 50% [col-start]);
+  }
+}
+@media (max-width: 580px) {
+  main {
+    grid-template-columns: repeat(1, 100% [col-start]);
+  }
 }
 
 section {
   margin: 1em;
+  clip-path: polygon(
+    50% 0%,
+    100% 9%,
+    100% 60%,
+    100% 100%,
+    0 100%,
+    0% 60%,
+    0 9%
+  );
+  background-color: #724a6cff;
+  border-radius: 5%;
+  padding: 0.5em;
+}
+
+dl,
+dd,
+p {
+  color: #b7a4af;
 }
 
 dt {
@@ -53,7 +86,7 @@ h2 {
   /* background-color: pink; */
   text-align: center;
   padding: 0.5em;
-  color: #724a6cff;
+  color: #b7a4af;
 }
 
 h2::first-letter,
@@ -65,6 +98,66 @@ h2 {
   font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
-p {
-  color: black;
+blockquote {
+  clip-path: polygon(
+    20% 0%,
+    80% 0%,
+    100% 20%,
+    100% 80%,
+    80% 100%,
+    20% 100%,
+    0% 80%,
+    0% 20%
+  );
+  background-color: #b7a4af;
+  color: #724a6cff;
+  display: grid;
+  place-self: center;
+}
+
+blockquote p {
+  color: #724a6cff;
+}
+
+/* darkmode */
+input:checked + body {
+  background-color: black;
+}
+
+input:checked + header {
+  background-color: black;
+}
+
+input:checked ~ main {
+  background-color: black;
+}
+
+input:checked ~ main > section > blockquote {
+  background-color: black;
+}
+
+/* Flower */
+/* https://codepen.io/maximakymenko/pen/povexGY */
+.flower__head {
+  width: 360px;
+  height: 120px;
+  border-radius: 60px;
+  background: #724a6cff;
+  margin-top: 50px;
+  place-self: center;
+}
+
+.flower__head::after,
+.flower__head::before {
+  content: "";
+  position: absolute;
+  background: #724a6cff;
+  border-radius: 60px;
+  width: 360px;
+  height: 120px;
+  transform: rotate(60deg);
+}
+
+.flower__head::before {
+  transform: rotate(-60deg);
 }
