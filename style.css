@@ -13,6 +13,7 @@ main {
   justify-content: center;
 }
 
+/* Make grid smaller when screen is smaller */
 @media (min-width: 900px) {
   main {
     grid-template-columns: repeat(3, 33% [col-start]);
@@ -29,6 +30,7 @@ main {
   }
 }
 
+/* https://bennettfeely.com/clippy/ */
 section {
   margin: 1em;
   clip-path: polygon(
@@ -40,7 +42,7 @@ section {
     0% 60%,
     0 9%
   );
-  background-color: #724a6cff;
+  background-color: #6f496a;
   border-radius: 5%;
   padding: 0.5em;
 }
@@ -48,16 +50,23 @@ section {
 dl,
 dd,
 p {
-  color: #b7a4af;
+  color: #dbd1d7;
+}
+
+h1 + p {
+  color: black;
 }
 
 dt {
   font-size: 14pt;
+  padding-top: 0.5em;
 }
 
 dl {
   display: grid;
   grid-template-columns: [first] 75% [line2] 25% [end];
+  padding-top: 0.5em;
+  padding-left: 1em;
 }
 
 dd {
@@ -83,72 +92,103 @@ h1 {
 
 header:first-of-type,
 h2 {
-  /* background-color: pink; */
+  padding: 0.5em 0.5em 0 0.5em;
   text-align: center;
-  padding: 0.5em;
   color: #b7a4af;
 }
 
+/* Capitalize first letters */
 h2::first-letter,
+p::first-letter,
+dd::first-letter,
 dt::first-letter {
   text-transform: capitalize;
+}
+
+body > header:first-of-type {
+  margin-bottom: 1em;
 }
 
 h2 {
   font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
-blockquote {
-  clip-path: polygon(
-    20% 0%,
-    80% 0%,
-    100% 20%,
-    100% 80%,
-    80% 100%,
-    20% 100%,
-    0% 80%,
-    0% 20%
-  );
-  background-color: #b7a4af;
-  color: #724a6cff;
-  display: grid;
-  place-self: center;
-}
-
 blockquote p {
   color: #724a6cff;
 }
 
+/* Blockquote banner */
+/* https://codepen.io/shooft/pen/xxROeKW */
+blockquote {
+  position: relative;
+  margin-top: 0.5em;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 1em;
+  text-align: center;
+  color: #724a6cff;
+  background: #b7a4af;
+  box-shadow: 0 0.125em 0.125em #2f247588;
+}
+
+blockquote::after,
+blockquote::before {
+  content: "";
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  bottom: -0.5em;
+  background-image: conic-gradient(
+    from 45deg,
+    transparent 0deg 90deg,
+    #b7a4af 90deg
+  );
+
+  filter: drop-shadow(0 0.125em 0.125em #2f247588);
+  z-index: -1;
+}
+
+blockquote::after {
+  right: -1.75em;
+  transform: rotate(-5deg) translatez(-1em);
+}
+
+blockquote::before {
+  left: -1.75em;
+  transform: rotate(5deg) scalex(-1) translatez(-1em);
+}
+
 /* darkmode */
-input:checked + body {
-  background-color: black;
-}
-
-input:checked + header {
-  background-color: black;
-}
-
-input:checked ~ main {
-  background-color: black;
-}
-
-input:checked ~ main > section > blockquote {
-  background-color: black;
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #121212;
+  }
+  p,
+  dl,
+  dd {
+    color: white;
+  }
+  h1 + p {
+    color: white;
+  }
 }
 
 /* Flower */
 /* https://codepen.io/maximakymenko/pen/povexGY */
-.flower__head {
+div {
   width: 360px;
   height: 120px;
   border-radius: 60px;
   background: #724a6cff;
   margin-top: 50px;
   place-self: center;
+  margin-top: 8em;
+  margin-bottom: 8em;
 }
 
-.flower__head::after,
-.flower__head::before {
+div::after,
+div::before {
   content: "";
   position: absolute;
   background: #724a6cff;
@@ -158,6 +198,17 @@ input:checked ~ main > section > blockquote {
   transform: rotate(60deg);
 }
 
-.flower__head::before {
+div::before {
   transform: rotate(-60deg);
+}
+
+/* Flower animation on hover */
+div:hover {
+  animation: flower 10s infinite;
+}
+
+@keyframes flower {
+  50% {
+    transform: rotate(360deg);
+  }
 }
