@@ -4,13 +4,47 @@
 }
 
 body {
-  background-color: #b7a4af;
+  background-color: #db974a;
   font-family: "Quicksand", sans-serif;
 }
 
 main {
+  /* shape-outside: polygon(26.4% 7.21%, 25.89% -5.21%, 93.04% -2.39%); */
   display: grid;
   justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+main::after,
+main::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(82deg, transparent 50%, #4b9294 50%, #4b9294),
+    linear-gradient(67deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(52deg, transparent 50%, #4b9294 50%, #4b9294),
+    linear-gradient(37deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(22deg, transparent 50%, #4b9294 50%, #4b9294),
+    linear-gradient(7deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(-8deg, transparent 50%, #4b9294 50%, #4b9294),
+    linear-gradient(-23deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(-38deg, transparent 50%, #4b9294 50%, #4b9294),
+    linear-gradient(-53deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(-68deg, transparent 50%, #4b9294 50%, #4b9294),
+    linear-gradient(-83deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(-90deg, transparent 50%, #4b9294 50%, #4b9294);
+  background-position: 0% 0%;
+  background-size: 200% 100%;
+  height: 100%;
+  width: 50%;
+  z-index: -1;
+}
+main::before {
+  left: 50%;
+  transform: rotate(180deg);
+  z-index: -1;
 }
 
 /* Make grid smaller when screen is smaller */
@@ -86,15 +120,19 @@ dl dd:nth-child(3n)::before {
 
 h1 {
   font-family: "Mrs Sheppards", cursive;
-  color: #724a6cff;
+  color: black;
   font-size: 60pt;
 }
 
 header:first-of-type,
 h2 {
-  padding: 0.5em 0.5em 0 0.5em;
+  padding: 1em 0.5em 0px;
   text-align: center;
   color: #b7a4af;
+}
+
+header:first-of-type {
+  /* background-color: red; */
 }
 
 /* Capitalize first letters */
@@ -107,6 +145,14 @@ dt::first-letter {
 
 body > header:first-of-type {
   margin-bottom: 1em;
+  position: relative;
+  background-color: red;
+  border-bottom-left-radius: 20% 50%;
+  border-bottom-right-radius: 20% 50%;
+  /* border-bottom: 50px solid red;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  height: 100%; */
 }
 
 h2 {
@@ -123,7 +169,7 @@ blockquote {
   position: relative;
   margin-top: 0.5em;
   width: 80%;
-  margin: auto;
+  margin: 1em auto 1em auto;
   margin-bottom: 1em;
   text-align: center;
   color: #724a6cff;
@@ -159,7 +205,7 @@ blockquote::before {
 }
 
 /* darkmode */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body {
     color: #eee;
     background: #121212;
@@ -172,7 +218,7 @@ blockquote::before {
   h1 + p {
     color: white;
   }
-}
+} */
 
 /* Flower */
 /* https://codepen.io/maximakymenko/pen/povexGY */
