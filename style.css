@@ -6,6 +6,8 @@
 body {
   background-color: #db974a;
   font-family: "Quicksand", sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 main {
@@ -15,13 +17,16 @@ main {
   position: relative;
   width: 100%;
   height: 100%;
+  padding-top: 10em;
+  top: -10em;
+  padding-bottom: 10em;
 }
 
 main::after,
 main::before {
   content: "";
   position: absolute;
-  background: linear-gradient(90deg, transparent 50%, #db974a 50%, #db974a),
+  background: linear-gradient(90deg, transparent 50%, #4b9294 50%, #db974a),
     linear-gradient(82deg, transparent 50%, #4b9294 50%, #4b9294),
     linear-gradient(67deg, transparent 50%, #db974a 50%, #db974a),
     linear-gradient(52deg, transparent 50%, #4b9294 50%, #4b9294),
@@ -76,7 +81,13 @@ section {
     0% 60%,
     0 9%
   );
-  background-color: #6f496a;
+  background-color: #dc4c48;
+  border: 5px solid white;
+  outline: 2px solid black;
+  background-image: url(images/wave.png);
+  background-repeat: no-repeat;
+  background-size: 100% 20%;
+  background-position: bottom;
   border-radius: 5%;
   padding: 0.5em;
 }
@@ -84,11 +95,70 @@ section {
 dl,
 dd,
 p {
-  color: #dbd1d7;
+  color: black;
 }
 
 h1 + p {
   color: black;
+}
+
+span:first-of-type {
+  transform: translate(0px, -5px) rotate(-1deg);
+}
+
+span:nth-of-type(2) {
+  transform: translate(0px, -7px) rotate(-1deg);
+}
+
+span:nth-of-type(3) {
+  transform: translate(0px, -9px) rotate(-1deg);
+}
+
+span:nth-of-type(4) {
+  transform: translate(0px, -10px) rotate(-1deg);
+}
+
+span:nth-of-type(5) {
+  transform: translate(0px, -10px) rotate(-1deg);
+}
+
+span:nth-of-type(6) {
+  transform: translate(0px, -11px) rotate(0deg);
+}
+
+span:nth-of-type(7) {
+  transform: translate(0px, -11px) rotate(0deg);
+}
+
+span:nth-of-type(8) {
+  transform: translate(0px, -11px) rotate(0deg);
+}
+
+span:nth-of-type(9) {
+  transform: translate(0px, -11px) rotate(1deg);
+}
+
+span:nth-of-type(10) {
+  transform: translate(0px, -10px) rotate(1deg);
+}
+
+span:nth-of-type(11) {
+  transform: translate(0px, -9px) rotate(1deg);
+}
+
+span:nth-of-type(12) {
+  transform: translate(0px, -8px) rotate(1deg);
+}
+
+span:nth-of-type(13) {
+  transform: translate(0px, -7px) rotate(2deg);
+}
+span:nth-of-type(14) {
+  transform: translate(0px, -7px) rotate(2deg);
+}
+
+span {
+  display: inline-block;
 }
 
 dt {
@@ -101,6 +171,7 @@ dl {
   grid-template-columns: [first] 75% [line2] 25% [end];
   padding-top: 0.5em;
   padding-left: 1em;
+  margin-bottom: 4em;
 }
 
 dd {
@@ -119,20 +190,17 @@ dl dd:nth-child(3n)::before {
 }
 
 h1 {
-  font-family: "Mrs Sheppards", cursive;
+  font-family: "Merriweather", serif;
   color: black;
   font-size: 60pt;
+  text-transform: uppercase;
 }
 
 header:first-of-type,
 h2 {
   padding: 1em 0.5em 0px;
   text-align: center;
-  color: #b7a4af;
-}
-
-header:first-of-type {
-  /* background-color: red; */
+  color: black;
 }
 
 /* Capitalize first letters */
@@ -144,15 +212,27 @@ dt::first-letter {
 }
 
 body > header:first-of-type {
-  margin-bottom: 1em;
   position: relative;
-  background-color: red;
-  border-bottom-left-radius: 20% 50%;
-  border-bottom-right-radius: 20% 50%;
-  /* border-bottom: 50px solid red;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  height: 100%; */
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  z-index: 5;
+}
+
+body > header:first-of-type::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 100px;
+  width: 120%;
+  border: 5px solid white;
+  outline: 1px solid black;
+  transform: translate(-50%, 50%);
+  box-shadow: 0px 0px 0px 200px #dc4c48;
+  border-radius: 50%;
+  z-index: -1;
 }
 
 h2 {
@@ -160,7 +240,7 @@ h2 {
 }
 
 blockquote p {
-  color: #724a6cff;
+  color: black;
 }
 
 /* Blockquote banner */
@@ -172,9 +252,9 @@ blockquote {
   margin: 1em auto 1em auto;
   margin-bottom: 1em;
   text-align: center;
-  color: #724a6cff;
-  background: #b7a4af;
-  box-shadow: 0 0.125em 0.125em #2f247588;
+  color: black;
+  background: yellow;
+  box-shadow: 0 0.125em 0.125em black;
 }
 
 blockquote::after,
@@ -187,10 +267,10 @@ blockquote::before {
   background-image: conic-gradient(
     from 45deg,
     transparent 0deg 90deg,
-    #b7a4af 90deg
+    yellow 90deg
   );
 
-  filter: drop-shadow(0 0.125em 0.125em #2f247588);
+  filter: drop-shadow(0 0.125em 0.125em black);
   z-index: -1;
 }
 
@@ -218,6 +298,38 @@ blockquote::before {
   h1 + p {
     color: white;
   }
+  section {
+    background-color: black;
+  }
+
+  main::after,
+  main::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(90deg, transparent 50%, black 50%, white),
+      linear-gradient(82deg, transparent 50%, black 50%, black),
+      linear-gradient(67deg, transparent 50%, white 50%, white),
+      linear-gradient(52deg, transparent 50%, black 50%, black),
+      linear-gradient(37deg, transparent 50%, white 50%, white),
+      linear-gradient(22deg, transparent 50%, black 50%, black),
+      linear-gradient(7deg, transparent 50%, white 50%, white),
+      linear-gradient(-8deg, transparent 50%, black 50%, black),
+      linear-gradient(-23deg, transparent 50%, white 50%, white),
+      linear-gradient(-38deg, transparent 50%, black 50%, black),
+      linear-gradient(-53deg, transparent 50%, white 50%, white),
+      linear-gradient(-68deg, transparent 50%, black 50%, black),
+      linear-gradient(-83deg, transparent 50%, white 50%, white),
+      linear-gradient(-90deg, transparent 50%, black 50%, black);
+    background-position: 0% 0%;
+    background-size: 200% 100%;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+  }
+
+  body > header:first-of-type::after {
+    box-shadow: 0px 0px 0px 200px white;
+  }
 } */
 
 /* Flower */
@@ -226,7 +338,7 @@ div {
   width: 360px;
   height: 120px;
   border-radius: 60px;
-  background: #724a6cff;
+  background: #dc4c48;
   margin-top: 50px;
   place-self: center;
   margin-top: 8em;
@@ -237,7 +349,7 @@ div::after,
 div::before {
   content: "";
   position: absolute;
-  background: #724a6cff;
+  background: #dc4c48;
   border-radius: 60px;
   width: 360px;
   height: 120px;
@@ -258,3 +370,105 @@ div:hover {
     transform: rotate(360deg);
   }
 }
+
+/* footer {
+  width: 200%;
+  height: 100%;
+  background-image: url(images/wave.png);
+} */
+
+/* YAY */
+@keyframes yay-animation {
+  0% {
+    transform: none;
+  }
+  10% {
+    transform: scale(1.2, 0.8);
+  }
+  20% {
+    transform: scale(0.6, 1.5) translateY(-0.25em);
+    color: yellow;
+  }
+  30% {
+    transform: scale(1.3, 0.7);
+  }
+  40% {
+    transform: scale(0.9, 1.1);
+    /*     color:gold; */
+  }
+  50% {
+    transform: none;
+  }
+  75% {
+    /*     color:gold; */
+  }
+  100% {
+    transform: none;
+    color: black;
+  }
+}
+
+/* h1 span {
+  width: auto;
+  transform-origin: center bottom;
+  animation-name: yay-animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+
+h1 span:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+h1 span:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+
+h1 span:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+h1 span:nth-of-type(4) {
+  animation-delay: 0.45s;
+}
+
+h1 span:nth-of-type(5) {
+  animation-delay: 0.6s;
+}
+
+h1 span:nth-of-type(6) {
+  animation-delay: 0.75s;
+}
+h1 span:nth-of-type(7) {
+  animation-delay: 0.9s;
+}
+
+h1 span:nth-of-type(8) {
+  animation-delay: 1.05s;
+}
+
+h1 span:nth-of-type(9) {
+  animation-delay: 1.2s;
+}
+h1 span:nth-of-type(10) {
+  animation-delay: 1.35s;
+}
+h1 span:nth-of-type(11) {
+  animation-delay: 1.5s;
+}
+
+h1 span:nth-of-type(12) {
+  animation-delay: 1.65s;
+}
+
+h1 span:nth-of-type(13) {
+  animation-delay: 1.8s;
+}
+
+h1 span:nth-of-type(14) {
+  animation-delay: 1.95s;
+}
+
+h1:hover span {
+  animation-play-state: running;
+} */
