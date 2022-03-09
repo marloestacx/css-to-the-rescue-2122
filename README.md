@@ -14,7 +14,7 @@ Dark mode
 <img src="https://github.com/marloestacx/menu/blob/main/images/week3.png">
 
 # Week 4
-In week 3 kreeg ik als feedback dat de style niet moeilijk genoeg was, hierdoor heb ik in week 4 een nieuwe poster gekozen. Hierop heb ik toen mijn ontwerp aangepast. Ik heb de achtergrond veranderd en een kleuren animatie aan de titel toegevoegd. Ik heb besloten om het clip path te verwijderen omdat de border niet mooi uit kwam. In het begin had ik erg moeite met de achtergrond maar na een voorbeeld te hebben gevonden op internet ben ik er erg tevreden mee. Ik wilde graag de titel tekst in een boog waarbij de tekst boven in op een lijn zit en onderaan een boog vormen, ik heb dit onderandere geprobeerd met shape-outside maar kwam hier uiteindelijk niet uit. Hierdoor heb ik besloten om de header te laten buigen en de tekst hierop te laten aansluitenm met transform.
+In week 3 kreeg ik als feedback dat de style niet moeilijk genoeg was, hierdoor heb ik in week 4 een nieuwe poster gekozen. Hierop heb ik toen mijn ontwerp aangepast. Ik heb de achtergrond veranderd en een kleuren animatie aan de titel toegevoegd. Ik heb besloten om het clip path te verwijderen omdat de border niet mooi uitkwam. In het begin had ik erg moeite met de achtergrond maar na een voorbeeld te hebben gevonden op internet ben ik er erg tevreden mee. Ik wilde graag de titel tekst in een boog waarbij de tekst bovenin op een lijn zit en onderaan een boog vormen, ik heb dit onderandere geprobeerd met shape-outside maar kwam hier uiteindelijk niet uit. Hierdoor heb ik besloten om de header te laten buigen en de tekst hierop te laten aansluitenm met transform.
 
 <img src="https://github.com/marloestacx/menu/blob/main/images/week4.png">
 
