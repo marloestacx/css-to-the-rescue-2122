@@ -10,101 +10,46 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-main {
-  /* shape-outside: polygon(26.4% 7.21%, 25.89% -5.21%, 93.04% -2.39%); */
-  display: grid;
-  justify-content: center;
+body > header:first-of-type {
   position: relative;
-  width: 100%;
-  height: 100%;
-  padding-top: 10em;
-  top: -10em;
-  padding-bottom: 10em;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  z-index: 5;
 }
 
-main::after,
-main::before {
+body > header:first-of-type::after {
   content: "";
+  box-sizing: border-box;
   position: absolute;
-  background: linear-gradient(90deg, transparent 50%, #4b9294 50%, #db974a),
-    linear-gradient(82deg, transparent 50%, #4b9294 50%, #4b9294),
-    linear-gradient(67deg, transparent 50%, #db974a 50%, #db974a),
-    linear-gradient(52deg, transparent 50%, #4b9294 50%, #4b9294),
-    linear-gradient(37deg, transparent 50%, #db974a 50%, #db974a),
-    linear-gradient(22deg, transparent 50%, #4b9294 50%, #4b9294),
-    linear-gradient(7deg, transparent 50%, #db974a 50%, #db974a),
-    linear-gradient(-8deg, transparent 50%, #4b9294 50%, #4b9294),
-    linear-gradient(-23deg, transparent 50%, #db974a 50%, #db974a),
-    linear-gradient(-38deg, transparent 50%, #4b9294 50%, #4b9294),
-    linear-gradient(-53deg, transparent 50%, #db974a 50%, #db974a),
-    linear-gradient(-68deg, transparent 50%, #4b9294 50%, #4b9294),
-    linear-gradient(-83deg, transparent 50%, #db974a 50%, #db974a),
-    linear-gradient(-90deg, transparent 50%, #4b9294 50%, #4b9294);
-  background-position: 0% 0%;
-  background-size: 200% 100%;
-  height: 100%;
-  width: 50%;
-  z-index: -1;
-}
-main::before {
+  bottom: 0;
   left: 50%;
-  transform: rotate(180deg);
+  height: 100px;
+  width: 120%;
+  border: 5px solid white;
+  outline: 1px solid black;
+  transform: translate(-50%, 50%);
+  box-shadow: 0px 0px 0px 200px #dc4c48;
+  border-radius: 50%;
   z-index: -1;
 }
 
-/* Make grid smaller when screen is smaller */
-@media (min-width: 900px) {
-  main {
-    grid-template-columns: repeat(3, 33% [col-start]);
-  }
-}
-@media (max-width: 900px) {
-  main {
-    grid-template-columns: repeat(2, 50% [col-start]);
-  }
-}
-@media (max-width: 580px) {
-  main {
-    grid-template-columns: repeat(1, 100% [col-start]);
-  }
-}
-
-/* https://bennettfeely.com/clippy/ */
-section {
-  margin: 1em;
-  background-color: #dc4c48;
-  border: 5px solid white;
-  outline: 2px solid black;
-  background-image: url(images/wave.png);
-  background-repeat: no-repeat;
-  background-size: 100% 20%;
-  background-position: bottom;
-  border-radius: 5%;
-  padding: 0.5em;
-  min-height: 30em;
-  z-index: 0;
-}
-
-dl,
-dd,
-p {
-  color: black;
-}
-
-h1 + p {
-  width: 10em;
-  margin: 0 auto 0 auto;
+header:first-of-type,
+h2 {
+  padding: 1em 0.5em 0px;
   text-align: center;
   color: black;
-  background: yellow;
-  box-shadow: 0 0.125em 0.125em black;
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+  color: black;
+  font-size: 60pt;
+  text-transform: uppercase;
 }
 
 span {
   display: inline-block;
-}
-
-h1 span {
   width: auto;
   animation-name: title-animation;
   animation-duration: 5s;
@@ -185,6 +130,7 @@ span:nth-of-type(14) {
   animation-delay: 1.95s;
 }
 
+/* https://codepen.io/shooft/pen/eYBdvey */
 @keyframes title-animation {
   0% {
     color: black;
@@ -215,46 +161,71 @@ span:nth-of-type(14) {
   }
 }
 
-dt {
-  font-size: 14pt;
-  padding-top: 0.5em;
-}
-
-dl {
-  display: grid;
-  grid-template-columns: [first] 75% [line2] 25% [end];
-  padding-top: 0.5em;
-  padding-left: 1em;
-  margin-bottom: 4em;
-}
-
-dd {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  padding-bottom: 0.5em;
-}
-
-dl dd:nth-child(3n) {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-
-dl dd:nth-child(3n)::before {
-  content: "\20AC";
-}
-
-h1 {
-  font-family: "Merriweather", serif;
-  color: black;
-  font-size: 60pt;
-  text-transform: uppercase;
-}
-
-header:first-of-type,
-h2 {
-  padding: 1em 0.5em 0px;
+h1 + p {
+  width: 10em;
+  margin: 0 auto 0 auto;
   text-align: center;
   color: black;
+  background: yellow;
+  box-shadow: 0 0.125em 0.125em black;
+}
+
+main {
+  display: grid;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 10em;
+  top: -10em;
+  padding-bottom: 10em;
+}
+
+/* Background stripes */
+/* https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a */
+main::after,
+main::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, transparent 50%, #4b9294 50%, #db974a),
+    linear-gradient(82deg, transparent 50%, #4b9294 50%, #4b9294),
+    linear-gradient(67deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(52deg, transparent 50%, #4b9294 50%, #4b9294),
+    linear-gradient(37deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(22deg, transparent 50%, #4b9294 50%, #4b9294),
+    linear-gradient(7deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(-8deg, transparent 50%, #4b9294 50%, #4b9294),
+    linear-gradient(-23deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(-38deg, transparent 50%, #4b9294 50%, #4b9294),
+    linear-gradient(-53deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(-68deg, transparent 50%, #4b9294 50%, #4b9294),
+    linear-gradient(-83deg, transparent 50%, #db974a 50%, #db974a),
+    linear-gradient(-90deg, transparent 50%, #4b9294 50%, #4b9294);
+  background-position: 0% 0%;
+  background-size: 200% 100%;
+  height: 100%;
+  width: 50%;
+  z-index: -1;
+}
+main::before {
+  left: 50%;
+  transform: rotate(180deg);
+  z-index: -1;
+}
+
+section {
+  margin: 1em;
+  background-color: #dc4c48;
+  border: 5px solid white;
+  outline: 2px solid black;
+  background-image: url(images/wave.png);
+  background-repeat: no-repeat;
+  background-size: 100% 20%;
+  background-position: bottom;
+  border-radius: 5%;
+  padding: 0.5em;
+  min-height: 30em;
+  z-index: 0;
 }
 
 /* Capitalize first letters */
@@ -265,36 +236,8 @@ dt::first-letter {
   text-transform: capitalize;
 }
 
-body > header:first-of-type {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  color: white;
-  z-index: 5;
-}
-
-body > header:first-of-type::after {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  height: 100px;
-  width: 120%;
-  border: 5px solid white;
-  outline: 1px solid black;
-  transform: translate(-50%, 50%);
-  box-shadow: 0px 0px 0px 200px #dc4c48;
-  border-radius: 50%;
-  z-index: -1;
-}
-
 h2 {
   font-family: "Yanone Kaffeesatz", sans-serif;
-}
-
-blockquote p {
-  color: black;
 }
 
 /* Blockquote banner */
@@ -311,14 +254,18 @@ blockquote {
   box-shadow: 0 0.125em 0.125em black;
 }
 
-blockquote > p,
+blockquote p,
 cite {
   z-index: 1;
 }
 
+blockquote p {
+  color: black;
+}
+
 blockquote::after,
 blockquote::before {
-  content: " ";
+  content: "";
   position: absolute;
   width: 2.5em;
   height: 2.5em;
@@ -343,53 +290,38 @@ blockquote::before {
   transform: rotate(5deg) scalex(-1) translatez(-1em);
 }
 
-/* darkmode */
-/* @media (prefers-color-scheme: dark) {
-  body {
-    color: #eee;
-    background: #121212;
-  }
-  p,
-  dl,
-  dd {
-    color: white;
-  }
-  h1 + p {
-    color: white;
-  }
-  section {
-    background-color: black;
-  }
+dl,
+dd {
+  color: black;
+}
 
-  main::after,
-  main::before {
-    content: "";
-    position: absolute;
-    background: linear-gradient(90deg, transparent 50%, black 50%, white),
-      linear-gradient(82deg, transparent 50%, black 50%, black),
-      linear-gradient(67deg, transparent 50%, white 50%, white),
-      linear-gradient(52deg, transparent 50%, black 50%, black),
-      linear-gradient(37deg, transparent 50%, white 50%, white),
-      linear-gradient(22deg, transparent 50%, black 50%, black),
-      linear-gradient(7deg, transparent 50%, white 50%, white),
-      linear-gradient(-8deg, transparent 50%, black 50%, black),
-      linear-gradient(-23deg, transparent 50%, white 50%, white),
-      linear-gradient(-38deg, transparent 50%, black 50%, black),
-      linear-gradient(-53deg, transparent 50%, white 50%, white),
-      linear-gradient(-68deg, transparent 50%, black 50%, black),
-      linear-gradient(-83deg, transparent 50%, white 50%, white),
-      linear-gradient(-90deg, transparent 50%, black 50%, black);
-    background-position: 0% 0%;
-    background-size: 200% 100%;
-    height: 100%;
-    width: 50%;
-    z-index: -1;
-  }
+dl dd:nth-child(3n) {
+  grid-column-start: 2;
+  padding-left: 1em;
+}
 
-  body > header:first-of-type::after {
-    box-shadow: 0px 0px 0px 200px white;
-  }
-} */
+/* Add money sign */
+dl dd:nth-child(3n)::before {
+  content: "\20AC";
+}
+
+dt {
+  font-size: 14pt;
+  padding-top: 0.5em;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: [first] 75% [line2] 25% [end];
+  padding-top: 0.5em;
+  padding-left: 1em;
+  margin-bottom: 4em;
+}
+
+dd {
+  grid-column-end: 2;
+  padding-bottom: 0.5em;
+}
 
 /* Flower */
 /* https://codepen.io/maximakymenko/pen/povexGY */
@@ -427,5 +359,124 @@ div:hover {
 @keyframes flower {
   50% {
     transform: rotate(360deg);
+  }
+}
+
+/* darkmode */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #121212;
+  }
+
+  body header:first-of-type::after {
+    box-shadow: 0px 0px 0px 200px black;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  h1 + p {
+    color: black;
+  }
+
+  main::after,
+  main::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(90deg, transparent 50%, black 50%, #6c6b6c),
+      linear-gradient(82deg, transparent 50%, black 50%, black),
+      linear-gradient(67deg, transparent 50%, #6c6b6c 50%, #6c6b6c),
+      linear-gradient(52deg, transparent 50%, black 50%, black),
+      linear-gradient(37deg, transparent 50%, #6c6b6c 50%, #6c6b6c),
+      linear-gradient(22deg, transparent 50%, black 50%, black),
+      linear-gradient(7deg, transparent 50%, #6c6b6c 50%, #6c6b6c),
+      linear-gradient(-8deg, transparent 50%, black 50%, black),
+      linear-gradient(-23deg, transparent 50%, #6c6b6c 50%, #6c6b6c),
+      linear-gradient(-38deg, transparent 50%, black 50%, black),
+      linear-gradient(-53deg, transparent 50%, #6c6b6c 50%, #6c6b6c),
+      linear-gradient(-68deg, transparent 50%, black 50%, black),
+      linear-gradient(-83deg, transparent 50%, #6c6b6c 50%, #6c6b6c),
+      linear-gradient(-90deg, transparent 50%, black 50%, black);
+    background-position: 0% 0%;
+    background-size: 200% 100%;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+  }
+
+  section {
+    background-color: black;
+  }
+
+  dl,
+  dd,
+  h2,
+  p {
+    color: white;
+  }
+
+  div,
+  div::after,
+  div::before {
+    background: lightgray;
+  }
+
+  @keyframes title-animation {
+    0% {
+      color: white;
+    }
+    13% {
+      color: red;
+    }
+    26% {
+      color: orange;
+    }
+    39% {
+      color: yellow;
+    }
+    52% {
+      color: green;
+    }
+    65% {
+      color: blue;
+    }
+    78% {
+      color: purple;
+    }
+    91% {
+      color: #f803fc;
+    }
+    100% {
+      color: white;
+    }
+  }
+}
+
+/* Make grid smaller when screen is smaller */
+@media (min-width: 900px) {
+  main {
+    grid-template-columns: repeat(3, 33% [col-start]);
+  }
+}
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: repeat(2, 50% [col-start]);
+  }
+  dl {
+    margin-bottom: 8em;
+  }
+  /* Don't show second flower on smaller screen */
+  div:nth-of-type(2) {
+    display: none;
+  }
+}
+@media (max-width: 580px) {
+  main {
+    grid-template-columns: repeat(1, 100% [col-start]);
+  }
+  dl {
+    margin-bottom: 10em;
   }
 }
