@@ -14,7 +14,7 @@ Darkmode
 <img src="https://github.com/marloestacx/menu/blob/main/images/week3.png">
 
 # Week 4
-In de laatste week heb ik een nieuwe poster gekozen en heb hierop mijn ontwerp aangepast. Ik heb de achtergrond veranderd en een kleuren animatie aan de titel toegevoegd. Ik heb besloten om het clip path te verwijderen omdat de border niet mooi uit kwam. 
+In de laatste week heb ik een nieuwe poster gekozen en heb hierop mijn ontwerp aangepast. Ik heb de achtergrond veranderd en een kleuren animatie aan de titel toegevoegd. Ik heb besloten om het clip path te verwijderen omdat de border niet mooi uit kwam. In het begin had ik erg moeite met de achtergrond maar na een voorbeeld te hebben gevonden op internet ben ik er erg tevreden mee. Ik wilde graag de titel tekst in een boog maar dit bleek te moeilijk, het kwam er telkens niet mooi uit dus heb ik besloten om de header een beetje te buigen en de tekst daar op aan te sluiten. 
 <img src="https://github.com/marloestacx/menu/blob/main/images/week4.png">
 
 Darkmode
