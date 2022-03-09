@@ -48,6 +48,7 @@ h1 {
   text-transform: uppercase;
 }
 
+/* Title */
 span {
   display: inline-block;
   width: auto;
@@ -130,6 +131,7 @@ span:nth-of-type(14) {
   animation-delay: 1.95s;
 }
 
+/* title rainbow animation */
 /* https://codepen.io/shooft/pen/eYBdvey */
 @keyframes title-animation {
   0% {
@@ -301,7 +303,7 @@ dl dd:nth-child(3n) {
   padding-left: 1em;
 }
 
-/* Add money sign */
+/* Add euro sign */
 dl dd:nth-child(3n)::before {
   content: "\20AC";
 }
