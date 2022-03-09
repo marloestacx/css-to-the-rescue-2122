@@ -21,3 +21,10 @@ In week 3 kreeg ik als feedback dat de style niet moeilijk genoeg was, hierdoor 
 Dark mode
 <img src="https://github.com/marloestacx/menu/blob/main/images/week4.1.png">
 
+## Bronnen
+* [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+* [Regenboog titel](https://codepen.io/shooft/pen/eYBdvey)
+* [Letters draaien](https://www.w3schools.com/css/css3_2dtransforms.asp)
+* [Achtergrond](https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a)
+* [Quote banner](https://codepen.io/shooft/pen/xxROeKW)
+* [Bloem](https://codepen.io/maximakymenko/pen/povexGY)
