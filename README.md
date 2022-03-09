@@ -7,9 +7,9 @@ Deze week ben ik begonnen met de styling van de menu kaart. Ik heb gekozen voor 
 <img src="https://github.com/marloestacx/menu/blob/main/images/week2.png">
 
 # Week 3
-Deze week heb ik veel gestoeid met de dark mode van de pagina, ik wilde graag dat je dat zelf kon kiezen door middel van een checkbox maar kreeg dit niet werkend omdat je vanuit daar niet de body kon aanpassen. Uiteindelijk heb ik het toegevoegd met een prefers-color-scheme. Ook heb ik een animatie toegevoegd aan de bloemen en verdere styling van de sections.
+Deze week heb ik veel gestoeid met de dark mode van de pagina, ik wilde graag dat je dat zelf kon kiezen door middel van een checkbox maar kreeg dit niet werkend omdat je vanuit daar niet de body kon aanpassen. Uiteindelijk heb ik het toegevoegd met een prefers-color-scheme. Ook heb ik een animatie toegevoegd aan de bloemen en verdere styling van de sections. Aan de sections heb ik een clip path toegevoegd waarde ze een beetje op huisjes lijken. 
 <img src="https://github.com/marloestacx/menu/blob/main/images/week3.1.png">
 <img src="https://github.com/marloestacx/menu/blob/main/images/week3.png">
 
 # Week 4
-In de laatste week heb ik een nieuwe poster gekozen en heb hierop mijn ontwerp aangepast. Ik heb de achtergrond veranderd en een kleuren animatie aan de titel toegevoegd. 
+In de laatste week heb ik een nieuwe poster gekozen en heb hierop mijn ontwerp aangepast. Ik heb de achtergrond veranderd en een kleuren animatie aan de titel toegevoegd. Ik heb besloten om het clip path te verwijderen omdat de border niet mooi uit kwam. 
