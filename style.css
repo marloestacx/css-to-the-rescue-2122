@@ -207,6 +207,7 @@ main::before {
   width: 50%;
   z-index: -1;
 }
+
 main::before {
   left: 50%;
   transform: rotate(180deg);
@@ -220,7 +221,7 @@ section {
   outline: 2px solid black;
   background-image: url(images/wave.png);
   background-repeat: no-repeat;
-  background-size: 100% 20%;
+  background-size: 100% 10em;
   background-position: bottom;
   border-radius: 5%;
   padding: 0.5em;
