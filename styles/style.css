@@ -8,6 +8,46 @@ body {
   font-family: "Quicksand", sans-serif;
   display: grid;
   grid-template-rows: auto 1fr auto;
+
+  height: 100%;
+  background-image: radial-gradient(
+      circle at 50% 75%,
+      #db974a 15%,
+      transparent 15%
+    ),
+    repeating-conic-gradient(at 50% 76%, #db974a 0% 5%, #4b9294 5% 10%);
+}
+
+.wrap {
+  display: flex;
+}
+
+.headerleft {
+  z-index: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 11vh;
+  display: flex;
+  width: 50%;
+  background-image: repeating-conic-gradient(
+    at 0% 76%,
+    #db974a 0% 5%,
+    #4b9294 5% 10%
+  );
+}
+
+.headerright {
+  height: 11vh;
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 50%;
+  background-image: repeating-conic-gradient(
+    at 100% 76%,
+    #4b9294 0% 5%,
+    #db974a 5% 10%
+  );
 }
 
 body > header:first-of-type {
@@ -16,6 +56,7 @@ body > header:first-of-type {
   text-align: center;
   color: white;
   z-index: 5;
+  height: 14vh;
 }
 
 body > header:first-of-type::after {
@@ -29,9 +70,9 @@ body > header:first-of-type::after {
   border: 5px solid white;
   outline: 1px solid black;
   transform: translate(-50%, 50%);
-  box-shadow: 0px 0px 0px 200px #dc4c48;
+  /* box-shadow: 0px 0px 0px 200px #dc4c48; */
   border-radius: 50%;
-  z-index: -1;
+  z-index: 2;
 }
 
 header:first-of-type,
@@ -44,6 +85,10 @@ h2 {
 h1 {
   font-family: "Merriweather", serif;
   color: black;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
   font-size: 60pt;
   text-transform: uppercase;
 }
@@ -69,66 +114,66 @@ span:first-of-type {
 
 span:nth-of-type(2) {
   transform: translate(0px, -7px) rotate(-1deg);
-  animation-delay: 0.15s;
+  animation-delay: -0.15s;
 }
 
 span:nth-of-type(3) {
   transform: translate(0px, -9px) rotate(-1deg);
-  animation-delay: 0.3s;
+  animation-delay: -0.3s;
 }
 
 span:nth-of-type(4) {
   transform: translate(0px, -10px) rotate(-1deg);
-  animation-delay: 0.45s;
+  animation-delay: -0.45s;
 }
 
 span:nth-of-type(5) {
   transform: translate(0px, -10px) rotate(-1deg);
-  animation-delay: 0.6s;
+  animation-delay: -0.6s;
 }
 
 span:nth-of-type(6) {
   transform: translate(0px, -11px) rotate(0deg);
-  animation-delay: 0.75s;
+  animation-delay: -0.75s;
 }
 
 span:nth-of-type(7) {
   transform: translate(0px, -11px) rotate(0deg);
-  animation-delay: 0.9s;
+  animation-delay: -0.9s;
 }
 
 span:nth-of-type(8) {
   transform: translate(0px, -11px) rotate(0deg);
-  animation-delay: 1.05s;
+  animation-delay: -1.05s;
 }
 
 span:nth-of-type(9) {
   transform: translate(0px, -11px) rotate(1deg);
-  animation-delay: 1.2s;
+  animation-delay: -1.2s;
 }
 
 span:nth-of-type(10) {
   transform: translate(0px, -10px) rotate(1deg);
-  animation-delay: 1.35s;
+  animation-delay: -1.35s;
 }
 
 span:nth-of-type(11) {
   transform: translate(0px, -9px) rotate(1deg);
-  animation-delay: 1.5s;
+  animation-delay: -1.5s;
 }
 
 span:nth-of-type(12) {
   transform: translate(0px, -8px) rotate(1deg);
-  animation-delay: 1.65s;
+  animation-delay: -1.65s;
 }
 
 span:nth-of-type(13) {
   transform: translate(0px, -7px) rotate(2deg);
-  animation-delay: 1.8s;
+  animation-delay: -1.8s;
 }
 span:nth-of-type(14) {
   transform: translate(0px, -7px) rotate(2deg);
-  animation-delay: 1.95s;
+  animation-delay: -1.95s;
 }
 
 /* title rainbow animation */
@@ -165,7 +210,7 @@ span:nth-of-type(14) {
 
 h1 + p {
   width: 10em;
-  margin: 0 auto 0 auto;
+  margin: 6em auto 0 auto;
   text-align: center;
   color: black;
   background: yellow;
@@ -178,14 +223,11 @@ main {
   position: relative;
   width: 100%;
   height: 100%;
-  padding-top: 10em;
-  top: -10em;
-  padding-bottom: 10em;
 }
 
 /* Background stripes */
 /* https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a */
-main::after,
+/* main::after,
 main::before {
   content: "";
   position: absolute;
@@ -208,7 +250,7 @@ main::before {
   height: 100%;
   width: 50%;
   z-index: -1;
-}
+} */
 
 main::before {
   left: 50%;
@@ -221,7 +263,7 @@ section {
   background-color: #dc4c48;
   border: 5px solid white;
   outline: 2px solid black;
-  background-image: url(images/wave.png);
+  background-image: url(../images/wave.png);
   background-repeat: no-repeat;
   background-size: 100% 10em;
   background-position: bottom;
@@ -328,7 +370,7 @@ dd {
 
 /* Flower */
 /* https://codepen.io/maximakymenko/pen/povexGY */
-div {
+.flower {
   width: 360px;
   height: 120px;
   border-radius: 60px;
@@ -339,8 +381,8 @@ div {
   margin-bottom: 8em;
 }
 
-div::after,
-div::before {
+.flower::after,
+.flower::before {
   content: "";
   position: absolute;
   background: #dc4c48;
@@ -350,12 +392,21 @@ div::before {
   transform: rotate(60deg);
 }
 
-div::before {
+.flower::before {
   transform: rotate(-60deg);
 }
 
+/* div {
+  height: 30vh;
+  border-radius: 0px 100px 0px 100px;
+  background: linear-gradient(160deg, #ee0979 0%, #ff6a00 100%),
+    linear-gradient(160deg, #ee0979 0%, #ff6a00 100%),
+    linear-gradient(160deg, #ee0979 0%, #ff6a00 100%),
+    linear-gradient(160deg, #ee0979 0%, #ff6a00 100%);
+} */
+
 /* Flower animation on hover */
-div:hover {
+.flower:hover {
   animation: flower 10s infinite;
 }
 
