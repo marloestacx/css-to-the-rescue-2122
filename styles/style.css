@@ -1,3 +1,9 @@
+:root {
+  --orange: #db974a;
+  --blue: #4b9294;
+  --red: #dc4c48;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -15,7 +21,11 @@ body {
       #db974a 15%,
       transparent 15%
     ),
-    repeating-conic-gradient(at 50% 76%, #db974a 0% 5%, #4b9294 5% 10%);
+    repeating-conic-gradient(
+      at 50% 76%,
+      var(--orange) 0% 5%,
+      var(--blue) 5% 10%
+    );
 }
 
 .wrap {
@@ -32,8 +42,8 @@ body {
   width: 50%;
   background-image: repeating-conic-gradient(
     at 0% 76%,
-    #db974a 0% 5%,
-    #4b9294 5% 10%
+    var(--orange) 0% 5%,
+    var(--blue) 5% 10%
   );
 }
 
@@ -45,8 +55,8 @@ body {
   width: 50%;
   background-image: repeating-conic-gradient(
     at 100% 76%,
-    #4b9294 0% 5%,
-    #db974a 5% 10%
+    var(--blue) 0% 5%,
+    var(--orange) 5% 10%
   );
 }
 
@@ -80,6 +90,68 @@ h2 {
   padding: 1em 0.5em 0px;
   text-align: center;
   color: black;
+}
+
+main::before {
+  left: 50%;
+  transform: rotate(180deg);
+  z-index: -1;
+}
+
+main {
+  display: grid;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  margin: 1em;
+  background-color: var(--red);
+  border: 5px solid white;
+  outline: 2px solid black;
+  background-image: url(../images/wave.png);
+  background-repeat: no-repeat;
+  background-size: 100% 10em;
+  background-position: bottom;
+  border-radius: 5%;
+  padding: 0.5em;
+  min-height: 30em;
+  z-index: 0;
+}
+
+dl,
+dd {
+  color: black;
+}
+
+dl dd:nth-child(3n) {
+  grid-column-start: 2;
+  padding-left: 1em;
+}
+
+/* Add euro sign */
+dl dd:nth-child(3n)::before {
+  content: "\20AC";
+}
+
+dt {
+  font-size: 14pt;
+  padding-top: 0.5em;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: [first] 75% [line2] 25% [end];
+  padding-top: 0.5em;
+  padding-left: 1em;
+  margin-bottom: 4em;
+}
+
+dd {
+  grid-column-end: 2;
+  padding-bottom: 0.5em;
 }
 
 h1 {
@@ -217,14 +289,6 @@ h1 + p {
   box-shadow: 0 0.125em 0.125em black;
 }
 
-main {
-  display: grid;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 /* Background stripes */
 /* https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a */
 /* main::after,
@@ -251,27 +315,6 @@ main::before {
   width: 50%;
   z-index: -1;
 } */
-
-main::before {
-  left: 50%;
-  transform: rotate(180deg);
-  z-index: -1;
-}
-
-section {
-  margin: 1em;
-  background-color: #dc4c48;
-  border: 5px solid white;
-  outline: 2px solid black;
-  background-image: url(../images/wave.png);
-  background-repeat: no-repeat;
-  background-size: 100% 10em;
-  background-position: bottom;
-  border-radius: 5%;
-  padding: 0.5em;
-  min-height: 30em;
-  z-index: 0;
-}
 
 /* Capitalize first letters */
 h2::first-letter,
@@ -333,39 +376,6 @@ blockquote::after {
 blockquote::before {
   left: -1.75em;
   transform: rotate(5deg) scalex(-1) translatez(-1em);
-}
-
-dl,
-dd {
-  color: black;
-}
-
-dl dd:nth-child(3n) {
-  grid-column-start: 2;
-  padding-left: 1em;
-}
-
-/* Add euro sign */
-dl dd:nth-child(3n)::before {
-  content: "\20AC";
-}
-
-dt {
-  font-size: 14pt;
-  padding-top: 0.5em;
-}
-
-dl {
-  display: grid;
-  grid-template-columns: [first] 75% [line2] 25% [end];
-  padding-top: 0.5em;
-  padding-left: 1em;
-  margin-bottom: 4em;
-}
-
-dd {
-  grid-column-end: 2;
-  padding-bottom: 0.5em;
 }
 
 /* Flower */
