@@ -86,7 +86,8 @@ body > header:first-of-type::after {
 }
 
 header:first-of-type,
-h2 {
+h2,
+p {
   padding: 1em 0.5em 0px;
   text-align: center;
   color: black;
@@ -107,18 +108,107 @@ main {
 }
 
 section {
-  margin: 1em;
   background-color: var(--red);
-  border: 5px solid white;
-  outline: 2px solid black;
+  /* border: 5px solid white;
+  outline: 2px solid black; */
   background-image: url(../images/wave.png);
   background-repeat: no-repeat;
   background-size: 100% 10em;
   background-position: bottom;
-  border-radius: 5%;
   padding: 0.5em;
-  min-height: 30em;
+  min-height: 55em;
   z-index: 0;
+  max-width: 100%;
+  position: relative;
+  opacity: 0.4;
+  height: 100%;
+}
+
+.menu {
+  position: relative;
+  overflow: hidden;
+  margin: 1em;
+  min-width: 220px;
+  /* width: 100%; */
+  color: #ffffff;
+  border: 5px solid white;
+  outline: 2px solid black;
+}
+
+.menu * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.menu div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.menu h2,
+.menu div p {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  display: inline-block;
+  background: yellow;
+  -webkit-transform: skew(-10deg) rotate(-10deg) translate(0, -50%);
+  transform: skew(-10deg) rotate(-10deg) translate(0, -50%);
+  padding: 12px 5px;
+  margin: 0;
+  top: 50%;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: black;
+}
+
+.menu div p {
+  top: 58%;
+}
+
+.menu:before {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  content: "";
+  background: var(--orange);
+  position: absolute;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: rotate(110deg) translateY(-50%);
+  transform: rotate(110deg) translateY(-50%);
+  z-index: 1;
+}
+
+.menu {
+  background: var(--blue);
+}
+
+/* .menu h2,
+.menu div p {
+  background: #36100c;
+} */
+
+.menu:hover h2,
+.menu:hover div p {
+  -webkit-transform: skew(-10deg) rotate(-10deg) translate(-150%, -50%);
+  transform: skew(-10deg) rotate(-10deg) translate(-150%, -50%);
+}
+
+.menu:hover:before {
+  -webkit-transform: rotate(110deg) translateY(-150%);
+  transform: rotate(110deg) translateY(-150%);
+}
+
+.menu:hover section {
+  opacity: 1;
 }
 
 dl,
@@ -532,7 +622,7 @@ blockquote::before {
     margin-bottom: 8em;
   }
   /* Don't show second flower on smaller screen */
-  div:nth-of-type(2) {
+  .flower {
     display: none;
   }
 }
