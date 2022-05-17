@@ -129,17 +129,21 @@ body > header:first-of-type {
   margin-top: 1.5em;
   height: 7.5em;
   background: repeating-conic-gradient(
-      at 100% 76%,
-      var(--blue) 0% 5%,
-      var(--orange) 5% 10%
-    ),
-    repeating-conic-gradient(at 0% 76%, var(--blue) 0% 5%, var(--orange) 5% 10%);
-
+        at 100% 76%,
+        var(--blue) 0% 5%,
+        var(--orange) 5% 10%
+      )
+      right,
+    repeating-conic-gradient(at 0% 76%, var(--orange) 0% 5%, var(--blue) 5% 10%)
+      left;
   position: relative;
   overflow: hidden;
   text-align: center;
   color: white;
   z-index: 5;
+
+  background-size: 50% 9em;
+  background-repeat: no-repeat;
 }
 
 body > header:first-of-type::after {
