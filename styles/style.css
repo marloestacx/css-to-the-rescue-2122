@@ -26,13 +26,76 @@ body {
       var(--orange) 0% 5%,
       var(--blue) 5% 10%
     );
+
+  margin: 0;
+  height: 100%;
+
+  /* een rode met daaronder een wqt grotere gele box-shadow */
+  /* box-shadow: inset 0 0 0 0.5em #900, inset 0 0 0 1.5em gold; */
 }
 
-.wrap {
+body::before {
+  content: "";
+  position: fixed;
+  /* left right top bottom allemaal 0 */
+  inset: 0;
+
+  background-image:
+		/* de streepjes boven */ repeating-linear-gradient(
+      black 2px,
+      transparent 2px calc(1em - 4px),
+      black calc(1em - 4px) calc(1em - 2px)
+    ),
+    /* de streepjes onder */
+      repeating-linear-gradient(
+        black 2px,
+        transparent 2px calc(1em - 4px),
+        black calc(1em - 4px) calc(1em - 2px)
+      ),
+    /* de streepjes links */
+      repeating-linear-gradient(
+        to right,
+        black 2px,
+        transparent 2px calc(1em - 4px),
+        black calc(1em - 4px) calc(1em - 2px)
+      ),
+    repeating-linear-gradient(
+      to right,
+      black 2px,
+      transparent 2px calc(1em - 4px),
+      black calc(1em - 4px) calc(1em - 2px)
+    );
+
+  background-position:
+		/* de streepjes boven */
+		/* horizontaal in het midden */
+		/* verticaal .5em + 2px van boven - 2px onder de rode box-shadow */ center
+      calc(0.5em + 2px),
+    /* de streepjes onder */ center calc(100% - 0.5em - 2px),
+    /* etc */ calc(0.5em + 2px) center, calc(100% - 0.5em - 2px) center;
+
+  background-size:
+		/* de streepjes boven */
+		/* de volle breedte min 2x .5em min 2x 2px */
+		/* de volle breedte min 2x rode box-shadow min 2x 2px witruimte */ calc(
+        100% - 1em - 4px
+      )
+      /* 1em - 2px hoog */
+      /* het deel dat de gele box-shadow uitsteekt min 2px witruimte */
+      calc(1em - 2px),
+    /* de streepjes onder */ calc(100% - 1em - 4px) calc(1em - 2px),
+    /* etc */ calc(1em - 2px) calc(100% - 1em - 4px),
+    calc(1em - 2px) calc(100% - 1em - 4px);
+
+  background-repeat:
+		/* geldt voor allemaal */ no-repeat;
+}
+
+/* .wrap {
   display: flex;
-}
+} */
 
-.headerleft {
+/* .headerleft {
   z-index: 0;
   top: 0;
   left: 0;
@@ -58,18 +121,32 @@ body {
     var(--blue) 0% 5%,
     var(--orange) 5% 10%
   );
-}
+} */
 
 body > header:first-of-type {
-  position: relative;
+  /* position: relative;
   overflow: hidden;
   text-align: center;
   color: white;
   z-index: 5;
-  height: 14vh;
+  height: 14vh; */
+  margin: 0 auto;
+  width: 96%;
+  margin-top: 1.5em;
+  height: 6.5em;
+  background: radial-gradient(
+      110% 50% at bottom,
+      transparent 50%,
+      transparent 51%
+    ),
+    repeating-conic-gradient(
+      at 100% 76%,
+      var(--blue) 0% 5%,
+      var(--orange) 5% 10%
+    );
 }
 
-body > header:first-of-type::after {
+/* body > header:first-of-type::after {
   content: "";
   box-sizing: border-box;
   position: absolute;
@@ -80,10 +157,10 @@ body > header:first-of-type::after {
   border: 5px solid white;
   outline: 1px solid black;
   transform: translate(-50%, 50%);
-  /* box-shadow: 0px 0px 0px 200px #dc4c48; */
+
   border-radius: 50%;
   z-index: 2;
-}
+} */
 
 header:first-of-type,
 h2,
@@ -109,8 +186,6 @@ main {
 
 section {
   background-color: var(--red);
-  /* border: 5px solid white;
-  outline: 2px solid black; */
   background-image: url(../images/wave.png);
   background-repeat: no-repeat;
   background-size: 100% 10em;
@@ -124,6 +199,7 @@ section {
   height: 100%;
 }
 
+/* https://codepen.io/littlesnippets/pen/NGdoKP */
 .menu {
   position: relative;
   overflow: hidden;
@@ -131,8 +207,7 @@ section {
   min-width: 220px;
   /* width: 100%; */
   color: #ffffff;
-  border: 5px solid white;
-  outline: 2px solid black;
+  box-shadow: 0 0 0 2px black, 0 0 0 7px white, 0 0 0 9px black;
 }
 
 .menu * {
@@ -372,7 +447,8 @@ span:nth-of-type(14) {
 
 h1 + p {
   width: 10em;
-  margin: 6em auto 0 auto;
+  margin: 5em auto 0 auto;
+  padding: 0;
   text-align: center;
   color: black;
   background: yellow;
@@ -523,13 +599,13 @@ blockquote::before {
     background: #121212;
   }
 
-  body header:first-of-type::after {
+  /* body header:first-of-type::after {
     box-shadow: 0px 0px 0px 200px black;
-  }
-
+  } */
+  /* 
   h1 {
     color: white;
-  }
+  } */
 
   h1 + p {
     color: black;
@@ -571,9 +647,9 @@ blockquote::before {
     color: white;
   }
 
-  div,
-  div::after,
-  div::before {
+  .flower,
+  .flower::after,
+  .flower::before {
     background: lightgray;
   }
 
@@ -611,7 +687,8 @@ blockquote::before {
 /* Make grid smaller when screen is smaller */
 @media (min-width: 900px) {
   main {
-    grid-template-columns: repeat(3, 33% [col-start]);
+    grid-template-columns: repeat(3, 32% [col-start]);
+    padding-bottom: 2em;
   }
 }
 @media (max-width: 900px) {
