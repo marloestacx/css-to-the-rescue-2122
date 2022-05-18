@@ -29,36 +29,29 @@ body {
 
   margin: 0;
   height: 100%;
-
-  /* een rode met daaronder een wqt grotere gele box-shadow */
-  /* box-shadow: inset 0 0 0 0.5em #900, inset 0 0 0 1.5em gold; */
 }
 
 body::before {
   content: "";
   position: fixed;
-  /* left right top bottom allemaal 0 */
   inset: 0;
 
-  background-image:
-		/* de streepjes boven */ repeating-linear-gradient(
+  background-image: repeating-linear-gradient(
       black 2px,
       transparent 2px calc(1em - 4px),
       black calc(1em - 4px) calc(1em - 2px)
     ),
-    /* de streepjes onder */
-      repeating-linear-gradient(
-        black 2px,
-        transparent 2px calc(1em - 4px),
-        black calc(1em - 4px) calc(1em - 2px)
-      ),
-    /* de streepjes links */
-      repeating-linear-gradient(
-        to right,
-        black 2px,
-        transparent 2px calc(1em - 4px),
-        black calc(1em - 4px) calc(1em - 2px)
-      ),
+    repeating-linear-gradient(
+      black 2px,
+      transparent 2px calc(1em - 4px),
+      black calc(1em - 4px) calc(1em - 2px)
+    ),
+    repeating-linear-gradient(
+      to right,
+      black 2px,
+      transparent 2px calc(1em - 4px),
+      black calc(1em - 4px) calc(1em - 2px)
+    ),
     repeating-linear-gradient(
       to right,
       black 2px,
@@ -66,66 +59,20 @@ body::before {
       black calc(1em - 4px) calc(1em - 2px)
     );
 
-  background-position:
-		/* de streepjes boven */
-		/* horizontaal in het midden */
-		/* verticaal .5em + 2px van boven - 2px onder de rode box-shadow */ center
-      calc(0.5em + 2px),
-    /* de streepjes onder */ center calc(100% - 0.5em - 2px),
-    /* etc */ calc(0.5em + 2px) center, calc(100% - 0.5em - 2px) center;
+  background-position: center calc(0.5em + 2px), center calc(100% - 0.5em - 2px),
+    calc(0.5em + 2px) center, calc(100% - 0.5em - 2px) center;
 
-  background-size:
-		/* de streepjes boven */
-		/* de volle breedte min 2x .5em min 2x 2px */
-		/* de volle breedte min 2x rode box-shadow min 2x 2px witruimte */ calc(
-        100% - 1em - 4px
-      )
-      /* 1em - 2px hoog */
-      /* het deel dat de gele box-shadow uitsteekt min 2px witruimte */
-      calc(1em - 2px),
-    /* de streepjes onder */ calc(100% - 1em - 4px) calc(1em - 2px),
-    /* etc */ calc(1em - 2px) calc(100% - 1em - 4px),
+  background-size: calc(100% - 1em - 4px) calc(1em - 2px),
+    calc(100% - 1em - 4px) calc(1em - 2px),
+    calc(1em - 2px) calc(100% - 1em - 4px),
     calc(1em - 2px) calc(100% - 1em - 4px);
 
-  background-repeat:
-		/* geldt voor allemaal */ no-repeat;
+  background-repeat: no-repeat;
 }
 
-/* .wrap {
-  display: flex;
-} */
-
-/* .headerleft {
-  z-index: 0;
-  top: 0;
-  left: 0;
-  position: absolute;
-  height: 11vh;
-  display: flex;
-  width: 50%;
-  background-image: repeating-conic-gradient(
-    at 0% 76%,
-    var(--orange) 0% 5%,
-    var(--blue) 5% 10%
-  );
-}
-
-.headerright {
-  height: 11vh;
-  top: 0;
-  right: 0;
-  position: absolute;
-  width: 50%;
-  background-image: repeating-conic-gradient(
-    at 100% 76%,
-    var(--blue) 0% 5%,
-    var(--orange) 5% 10%
-  );
-} */
-
-body > header:first-of-type {
+header {
   margin: 0 auto;
-  width: 95.7%;
+  width: calc(100% - 4.5em - 2px);
   margin-top: 1.5em;
   height: 7.5em;
   background: repeating-conic-gradient(
@@ -146,7 +93,7 @@ body > header:first-of-type {
   background-repeat: no-repeat;
 }
 
-body > header:first-of-type::after {
+header:after {
   content: "";
   box-sizing: border-box;
   position: absolute;
@@ -162,7 +109,7 @@ body > header:first-of-type::after {
   z-index: 2;
 }
 
-header:first-of-type,
+header,
 h2,
 p {
   padding: 1em 0.5em 0px;
@@ -181,7 +128,8 @@ main {
   justify-content: center;
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 99%;
+  padding-bottom: 3em;
 }
 
 section {
@@ -455,33 +403,6 @@ h1 + p {
   box-shadow: 0 0.125em 0.125em black;
 }
 
-/* Background stripes */
-/* https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a */
-/* main::after,
-main::before {
-  content: "";
-  position: absolute;
-  background: linear-gradient(90deg, transparent 50%, #4b9294 50%, #db974a),
-    linear-gradient(82deg, transparent 50%, #4b9294 50%, #4b9294),
-    linear-gradient(67deg, transparent 50%, #db974a 50%, #db974a),
-    linear-gradient(52deg, transparent 50%, #4b9294 50%, #4b9294),
-    linear-gradient(37deg, transparent 50%, #db974a 50%, #db974a),
-    linear-gradient(22deg, transparent 50%, #4b9294 50%, #4b9294),
-    linear-gradient(7deg, transparent 50%, #db974a 50%, #db974a),
-    linear-gradient(-8deg, transparent 50%, #4b9294 50%, #4b9294),
-    linear-gradient(-23deg, transparent 50%, #db974a 50%, #db974a),
-    linear-gradient(-38deg, transparent 50%, #4b9294 50%, #4b9294),
-    linear-gradient(-53deg, transparent 50%, #db974a 50%, #db974a),
-    linear-gradient(-68deg, transparent 50%, #4b9294 50%, #4b9294),
-    linear-gradient(-83deg, transparent 50%, #db974a 50%, #db974a),
-    linear-gradient(-90deg, transparent 50%, #4b9294 50%, #4b9294);
-  background-position: 0% 0%;
-  background-size: 200% 100%;
-  height: 100%;
-  width: 50%;
-  z-index: -1;
-} */
-
 /* Capitalize first letters */
 h2::first-letter,
 p::first-letter,
@@ -572,15 +493,6 @@ blockquote::before {
   transform: rotate(-60deg);
 }
 
-/* div {
-  height: 30vh;
-  border-radius: 0px 100px 0px 100px;
-  background: linear-gradient(160deg, #ee0979 0%, #ff6a00 100%),
-    linear-gradient(160deg, #ee0979 0%, #ff6a00 100%),
-    linear-gradient(160deg, #ee0979 0%, #ff6a00 100%),
-    linear-gradient(160deg, #ee0979 0%, #ff6a00 100%);
-} */
-
 /* Flower animation on hover */
 .flower:hover {
   animation: flower 10s infinite;
@@ -597,43 +509,58 @@ blockquote::before {
   body {
     color: #eee;
     background: #121212;
+
+    background-image: radial-gradient(
+        circle at 50% 75%,
+        #6c6b6c 15%,
+        transparent 15%
+      ),
+      repeating-conic-gradient(at 50% 76%, #6c6b6c 0% 5%, black 5% 10%);
   }
 
-  /* body header:first-of-type::after {
-    box-shadow: 0px 0px 0px 200px black;
-  } */
-  /* 
-  h1 {
-    color: white;
-  } */
+  body::before {
+    background-image:
+  /* de streepjes boven */ repeating-linear-gradient(
+        white 2px,
+        transparent 2px calc(1em - 4px),
+        white calc(1em - 4px) calc(1em - 2px)
+      ),
+      /* de streepjes onder */
+        repeating-linear-gradient(
+          white 2px,
+          transparent 2px calc(1em - 4px),
+          white calc(1em - 4px) calc(1em - 2px)
+        ),
+      /* de streepjes links */
+        repeating-linear-gradient(
+          to right,
+          white 2px,
+          transparent 2px calc(1em - 4px),
+          white calc(1em - 4px) calc(1em - 2px)
+        ),
+      repeating-linear-gradient(
+        to right,
+        white 2px,
+        transparent 2px calc(1em - 4px),
+        white calc(1em - 4px) calc(1em - 2px)
+      );
+  }
+
+  header {
+    background: repeating-conic-gradient(
+          at 100% 76%,
+          black 0% 5%,
+          #6c6b6c 5% 10%
+        )
+        right,
+      repeating-conic-gradient(at 0% 76%, #6c6b6c 0% 5%, black 5% 10%) left;
+
+    background-size: 50% 9em;
+    background-repeat: no-repeat;
+  }
 
   h1 + p {
     color: black;
-  }
-
-  main::after,
-  main::before {
-    content: "";
-    position: absolute;
-    background: linear-gradient(90deg, transparent 50%, black 50%, #6c6b6c),
-      linear-gradient(82deg, transparent 50%, black 50%, black),
-      linear-gradient(67deg, transparent 50%, #6c6b6c 50%, #6c6b6c),
-      linear-gradient(52deg, transparent 50%, black 50%, black),
-      linear-gradient(37deg, transparent 50%, #6c6b6c 50%, #6c6b6c),
-      linear-gradient(22deg, transparent 50%, black 50%, black),
-      linear-gradient(7deg, transparent 50%, #6c6b6c 50%, #6c6b6c),
-      linear-gradient(-8deg, transparent 50%, black 50%, black),
-      linear-gradient(-23deg, transparent 50%, #6c6b6c 50%, #6c6b6c),
-      linear-gradient(-38deg, transparent 50%, black 50%, black),
-      linear-gradient(-53deg, transparent 50%, #6c6b6c 50%, #6c6b6c),
-      linear-gradient(-68deg, transparent 50%, black 50%, black),
-      linear-gradient(-83deg, transparent 50%, #6c6b6c 50%, #6c6b6c),
-      linear-gradient(-90deg, transparent 50%, black 50%, black);
-    background-position: 0% 0%;
-    background-size: 200% 100%;
-    height: 100%;
-    width: 50%;
-    z-index: -1;
   }
 
   section {
@@ -693,20 +620,46 @@ blockquote::before {
 }
 @media (max-width: 900px) {
   main {
-    grid-template-columns: repeat(2, 50% [col-start]);
+    grid-template-columns: repeat(2, 47% [col-start]);
+  }
+
+  header {
+    height: 5.5em;
+    background-size: 50% 7em;
+  }
+
+  h1 {
+    font-size: 38pt;
+  }
+
+  h1 + p {
+    margin: 3em auto 0 auto;
   }
   dl {
     margin-bottom: 8em;
   }
-  /* Don't show second flower on smaller screen */
+  /* Don't show flowers on smaller screen */
   .flower {
     display: none;
   }
 }
 @media (max-width: 580px) {
   main {
-    grid-template-columns: repeat(1, 100% [col-start]);
+    grid-template-columns: repeat(1, 89% [col-start]);
   }
+
+  header {
+    height: 4.5em;
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  h1 + p {
+    margin: 2.5em auto 0 auto;
+  }
+
   dl {
     margin-bottom: 10em;
   }
