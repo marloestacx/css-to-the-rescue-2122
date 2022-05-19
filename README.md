@@ -27,7 +27,7 @@ Voor de herkansing heb ik gebruik gemaakt van een radial-gradient voor de achter
 <img src="https://github.com/marloestacx/menu/blob/main/images/her.png">
 
 Dark mode
-<img src="https://github.com/marloestacx/menu/blob/main/images/her2.png">
+<img src="https://github.com/marloestacx/menu/blob/main/images/hermenu2.png">
 
 
 
