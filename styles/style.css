@@ -1,13 +1,19 @@
+/* --- Colors --- */
+
 :root {
   --orange: #db974a;
   --blue: #4b9294;
   --red: #dc4c48;
 }
 
+/* --- Reset Styling --- */
+
 * {
   padding: 0;
   margin: 0;
 }
+
+/* --- Body Styling --- */
 
 body {
   background-color: #db974a;
@@ -70,6 +76,8 @@ body::before {
   background-repeat: no-repeat;
 }
 
+/* --- Header Styling --- */
+
 header {
   margin: 0 auto;
   width: calc(100% - 4.5em - 2px);
@@ -117,6 +125,8 @@ p {
   color: black;
 }
 
+/* --- Main Styling --- */
+
 main::before {
   left: 50%;
   transform: rotate(180deg);
@@ -146,6 +156,8 @@ section {
   opacity: 0.4;
   height: 100%;
 }
+
+/* --- Menu Styling --- */
 
 /* https://codepen.io/littlesnippets/pen/NGdoKP */
 .menu {
@@ -214,11 +226,6 @@ section {
   background: var(--blue);
 }
 
-/* .menu h2,
-.menu div p {
-  background: #36100c;
-} */
-
 .menu:hover h2,
 .menu:hover div p {
   -webkit-transform: skew(-10deg) rotate(-10deg) translate(-150%, -50%);
@@ -267,6 +274,8 @@ dd {
   padding-bottom: 0.5em;
 }
 
+/* --- Title Styling --- */
+
 h1 {
   font-family: "Merriweather", serif;
   color: black;
@@ -278,7 +287,6 @@ h1 {
   text-transform: uppercase;
 }
 
-/* Title */
 span {
   display: inline-block;
   width: auto;
@@ -361,7 +369,7 @@ span:nth-of-type(14) {
   animation-delay: -1.95s;
 }
 
-/* title rainbow animation */
+/* Title rainbow animation */
 /* https://codepen.io/shooft/pen/eYBdvey */
 @keyframes title-animation {
   0% {
@@ -395,9 +403,9 @@ span:nth-of-type(14) {
 
 h1 + p {
   width: 10em;
-  margin: 5em auto 0 auto;
-  padding: 0;
+  margin: 5.5em auto 0 auto;
   text-align: center;
+  padding: 0.2em;
   color: black;
   background: yellow;
   box-shadow: 0 0.125em 0.125em black;
@@ -415,7 +423,8 @@ h2 {
   font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
-/* Blockquote banner */
+/* --- Blockquote Styling --- */
+
 /* https://codepen.io/shooft/pen/xxROeKW */
 blockquote {
   position: relative;
@@ -465,7 +474,8 @@ blockquote::before {
   transform: rotate(5deg) scalex(-1) translatez(-1em);
 }
 
-/* Flower */
+/* --- Flower Styling --- */
+
 /* https://codepen.io/maximakymenko/pen/povexGY */
 .flower {
   width: 360px;
@@ -504,7 +514,8 @@ blockquote::before {
   }
 }
 
-/* darkmode */
+/* --- Darkmode --- */
+
 @media (prefers-color-scheme: dark) {
   body {
     color: #eee;
@@ -519,25 +530,22 @@ blockquote::before {
   }
 
   body::before {
-    background-image:
-  /* de streepjes boven */ repeating-linear-gradient(
+    background-image: repeating-linear-gradient(
         white 2px,
         transparent 2px calc(1em - 4px),
         white calc(1em - 4px) calc(1em - 2px)
       ),
-      /* de streepjes onder */
-        repeating-linear-gradient(
-          white 2px,
-          transparent 2px calc(1em - 4px),
-          white calc(1em - 4px) calc(1em - 2px)
-        ),
-      /* de streepjes links */
-        repeating-linear-gradient(
-          to right,
-          white 2px,
-          transparent 2px calc(1em - 4px),
-          white calc(1em - 4px) calc(1em - 2px)
-        ),
+      repeating-linear-gradient(
+        white 2px,
+        transparent 2px calc(1em - 4px),
+        white calc(1em - 4px) calc(1em - 2px)
+      ),
+      repeating-linear-gradient(
+        to right,
+        white 2px,
+        transparent 2px calc(1em - 4px),
+        white calc(1em - 4px) calc(1em - 2px)
+      ),
       repeating-linear-gradient(
         to right,
         white 2px,
@@ -557,10 +565,6 @@ blockquote::before {
 
     background-size: 50% 9em;
     background-repeat: no-repeat;
-  }
-
-  h1 + p {
-    color: black;
   }
 
   section {
@@ -611,7 +615,8 @@ blockquote::before {
   }
 }
 
-/* Make grid smaller when screen is smaller */
+/* --- Smaller screens --- */
+
 @media (min-width: 900px) {
   main {
     grid-template-columns: repeat(3, 32% [col-start]);
@@ -633,7 +638,7 @@ blockquote::before {
   }
 
   h1 + p {
-    margin: 3em auto 0 auto;
+    margin: 2.2em auto 0 auto;
   }
   dl {
     margin-bottom: 8em;
@@ -656,11 +661,30 @@ blockquote::before {
     font-size: 24pt;
   }
 
-  h1 + p {
-    margin: 2.5em auto 0 auto;
-  }
-
   dl {
     margin-bottom: 10em;
+  }
+
+  span:first-of-type {
+    transform: translate(0px, -4px) rotate(-9deg);
+  }
+  span:nth-of-type(12) {
+    transform: translate(0px, -7px) rotate(6deg);
+  }
+  span:nth-of-type(13) {
+    transform: translate(0px, -5px) rotate(5deg);
+  }
+  span:nth-of-type(14) {
+    transform: translate(0px, -2px) rotate(5deg);
+  }
+}
+
+@media (max-width: 420px) {
+  header {
+    height: 4.2em;
+    background-size: 50% 5em;
+  }
+  h1 {
+    font-size: 21pt;
   }
 }
