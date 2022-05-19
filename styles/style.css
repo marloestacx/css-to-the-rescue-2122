@@ -147,7 +147,7 @@ section {
 /* --- Menu Styling --- */
 
 /* https://codepen.io/littlesnippets/pen/NGdoKP */
-.menu {
+main > div:not(:last-of-type) {
   position: relative;
   overflow: hidden;
   margin: 1em;
@@ -155,12 +155,12 @@ section {
   box-shadow: 0 0 0 2px black, 0 0 0 7px white, 0 0 0 9px black;
 }
 
-.menu * {
+main > div:not(:last-of-type) * {
   box-sizing: border-box;
   transition: all 0.4s ease-in-out;
 }
 
-.menu div {
+main > div:not(:last-of-type) div {
   position: absolute;
   top: 0;
   left: 0;
@@ -169,8 +169,8 @@ section {
   z-index: 1;
 }
 
-.menu h2,
-.menu div p {
+main > div:not(:last-of-type) h2,
+main > div:not(:last-of-type) div p {
   position: absolute;
   left: 40px;
   right: 40px;
@@ -185,11 +185,11 @@ section {
   color: black;
 }
 
-.menu div p {
+main > div:not(:last-of-type) div p {
   top: 58%;
 }
 
-.menu:before {
+main > div:not(:last-of-type):before {
   height: 100%;
   width: 100%;
   top: 0;
@@ -202,20 +202,20 @@ section {
   z-index: 1;
 }
 
-.menu {
+main > div:not(:last-of-type) {
   background: var(--blue);
 }
 
-.menu:hover h2,
-.menu:hover div p {
+main > div:not(:last-of-type):hover h2,
+main > div:not(:last-of-type):hover div p {
   transform: skew(-10deg) rotate(-10deg) translate(-150%, -50%);
 }
 
-.menu:hover:before {
+main > div:not(:last-of-type):hover:before {
   transform: rotate(110deg) translateY(-150%);
 }
 
-.menu:hover section {
+main > div:not(:last-of-type):hover section {
   opacity: 1;
 }
 
@@ -462,7 +462,7 @@ blockquote::before {
 /* --- Flower Styling --- */
 
 /* https://codepen.io/maximakymenko/pen/povexGY */
-.flower {
+main > div:last-of-type {
   width: 360px;
   height: 120px;
   border-radius: 60px;
@@ -472,8 +472,8 @@ blockquote::before {
   margin-bottom: 8em;
 }
 
-.flower::after,
-.flower::before {
+main > div:last-of-type::after,
+main > div:last-of-type::before {
   content: "";
   position: absolute;
   background: #dc4c48;
@@ -483,12 +483,12 @@ blockquote::before {
   transform: rotate(60deg);
 }
 
-.flower::before {
+main > div:last-of-type::before {
   transform: rotate(-60deg);
 }
 
 /* Flower animation on hover */
-.flower:hover {
+main > div:last-of-type:hover {
   animation: flower 10s infinite;
 }
 
@@ -562,9 +562,9 @@ blockquote::before {
     color: white;
   }
 
-  .flower,
-  .flower::after,
-  .flower::before {
+  main > div:last-of-type,
+  main > div:last-of-type::after,
+  main > div:last-of-type::before {
     background: lightgray;
   }
 
@@ -628,7 +628,7 @@ blockquote::before {
     margin-bottom: 8em;
   }
   /* Don't show flowers on smaller screen */
-  .flower {
+  main > div:last-of-type {
     display: none;
   }
 }
