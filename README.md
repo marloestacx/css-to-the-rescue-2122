@@ -3,7 +3,7 @@
 Ik heb gekozen voor de CSS Zen Garden, hierbij ga ik een menu maken. Ik ben van plan om CSS grid te gebruiken omdat ik hier nog weinig ervaring mee heb, ook wil ik eventueel wat tekeningen toevoegen met CSS. Ik ga een prefers-color-scheme gebruiken om zo een dark mode toe te voegen.
 
 # Week 2
-Deze week ben ik begonnen met de styling van de menu kaart. Ik heb gekozen voor een kleurenschema en heb grid toegevoegd. Grid was voor mij vrijwel nieuw, hierdoor liep ik er in het begin ook wel mee te stuntelen. Uiteindelijk kreeg ik de pagina zoals ik het wilde en heb ik nog toegevoegd dat de grid responsive is. 
+Deze week ben ik begonnen met de styling van de menukaart. Ik heb gekozen voor een kleurenschema en heb grid toegevoegd. Grid was voor mij vrijwel nieuw, hierdoor liep ik er in het begin ook wel mee te stuntelen. Uiteindelijk kreeg ik de pagina zoals ik het wilde en heb ik nog toegevoegd dat de grid responsive is. 
 <img src="https://github.com/marloestacx/menu/blob/main/images/week2.png">
 
 # Week 3
@@ -14,12 +14,22 @@ Dark mode
 <img src="https://github.com/marloestacx/menu/blob/main/images/week3.png">
 
 # Week 4
-In week 3 kreeg ik als feedback dat de style niet moeilijk genoeg was, hierdoor heb ik in week 4 een nieuwe poster gekozen. Hierop heb ik toen mijn ontwerp aangepast. Ik heb de achtergrond veranderd en een kleuren animatie aan de titel toegevoegd. Ik heb besloten om het clip path te verwijderen omdat de border niet mooi uitkwam. In het begin had ik erg moeite met de achtergrond maar na een voorbeeld te hebben gevonden op internet ben ik er erg tevreden mee. Ik wilde graag de titel tekst in een boog waarbij de tekst bovenin op een lijn zit en onderaan een boog vormen, ik heb dit onderandere geprobeerd met shape-outside maar kwam hier uiteindelijk niet uit. Hierdoor heb ik besloten om de header te laten buigen en de tekst hierop te laten aansluitenm met transform.
+In week 3 kreeg ik als feedback dat de stijl niet moeilijk genoeg was, hierdoor heb ik in week 4 een nieuwe poster gekozen. Hierop heb ik toen mijn ontwerp aangepast. Ik heb de achtergrond veranderd en een kleuren animatie aan de titel toegevoegd. Ik heb besloten om het clip path te verwijderen omdat de border niet mooi uitkwam. In het begin had ik erg moeite met de achtergrond, maar na een voorbeeld te hebben gevonden op internet ben ik er erg tevreden mee. Ik wilde graag de titel tekst in een boog waarbij de tekst bovenin op een lijn zit en onderaan een boog vormen, ik heb dit onder andere geprobeerd met shape-outside maar kwam hier uiteindelijk niet uit. Hierdoor heb ik besloten om de header te laten buigen en de tekst hierop te laten aansluiten met transform.
 
 <img src="https://github.com/marloestacx/menu/blob/main/images/week4.png">
 
 Dark mode
 <img src="https://github.com/marloestacx/menu/blob/main/images/week4.1.png">
+
+# Herkansing
+Voor de herkansing heb ik gebruik gemaakt van een radial-gradient voor de achtergrond, ditzelfde principe heb ik ook bij de header toegepast. Door gebruik te maken van repeating-linear-gradient maak ik de lijnen aan de zijkant van het scherm. Voor de kleuren gebruik ik nu variabelen zodat je deze makkelijk kan aanpassen. Als laatste heb ik een hover effect op het menu toegepast zodat je eerst alleen de titel en omschrijving ziet en als je eroverheen hovert je het hele menu kan lezen. 
+
+<img src="https://github.com/marloestacx/menu/blob/main/images/her.png">
+
+Dark mode
+<img src="https://github.com/marloestacx/menu/blob/main/images/her2.png">
+
+
 
 ## Bronnen
 * [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
@@ -28,3 +38,5 @@ Dark mode
 * [Achtergrond](https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a)
 * [Quote banner](https://codepen.io/shooft/pen/xxROeKW)
 * [Bloem](https://codepen.io/maximakymenko/pen/povexGY)
+* [Hover](https://codepen.io/littlesnippets/pen/NGdoKP)
+* [Repeating-linear-gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/repeating-linear-gradient)
